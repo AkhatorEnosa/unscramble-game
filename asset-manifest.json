@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/unscramble-game/static/css/main.7071dbae.chunk.css",
+    "main.js": "/unscramble-game/static/js/main.0203685a.chunk.js",
+    "main.js.map": "/unscramble-game/static/js/main.0203685a.chunk.js.map",
+    "runtime-main.js": "/unscramble-game/static/js/runtime-main.7e37bbcd.js",
+    "runtime-main.js.map": "/unscramble-game/static/js/runtime-main.7e37bbcd.js.map",
+    "static/css/2.3c03f26f.chunk.css": "/unscramble-game/static/css/2.3c03f26f.chunk.css",
+    "static/js/2.011f7482.chunk.js": "/unscramble-game/static/js/2.011f7482.chunk.js",
+    "static/js/2.011f7482.chunk.js.map": "/unscramble-game/static/js/2.011f7482.chunk.js.map",
+    "index.html": "/unscramble-game/index.html",
+    "precache-manifest.1e79079c9637c87b3088326827223da8.js": "/unscramble-game/precache-manifest.1e79079c9637c87b3088326827223da8.js",
+    "service-worker.js": "/unscramble-game/service-worker.js",
+    "static/css/2.3c03f26f.chunk.css.map": "/unscramble-game/static/css/2.3c03f26f.chunk.css.map",
+    "static/css/main.7071dbae.chunk.css.map": "/unscramble-game/static/css/main.7071dbae.chunk.css.map",
+    "static/js/2.011f7482.chunk.js.LICENSE.txt": "/unscramble-game/static/js/2.011f7482.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7e37bbcd.js",
+    "static/css/2.3c03f26f.chunk.css",
+    "static/js/2.011f7482.chunk.js",
+    "static/css/main.7071dbae.chunk.css",
+    "static/js/main.0203685a.chunk.js"
+  ]
+}
