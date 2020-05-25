@@ -36,8 +36,6 @@ class App extends Component {
           word: word[0],
           randomWord: this.randWord(word[0]) //Randomize the gotten word
       })
-    
-    console.log(this.state.word);
   }
 
 
