@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Word from './components/Word';
-// import Form from './components/Form';
 import All from './components/All';
 
 
@@ -36,6 +34,8 @@ class App extends Component {
           word: word[0],
           randomWord: this.randWord(word[0]) //Randomize the gotten word
       })
+
+      console.log(this.state.word);
   }
 
 
@@ -142,7 +142,7 @@ fireMainComponent = () => {
 
 
         if (loading){ 
-            return <div className="tc pa5">Loading...</div>
+            return <div className="tc mt7 white">Loading...</div>
         } else if(!word.length){
             return <div className="tc">Did not get a word</div>
         } else if ((score > 0) && (score == number)){
@@ -150,14 +150,14 @@ fireMainComponent = () => {
               <div className="tc pa6">
                   <h2 className="f1 green">Congratulations!!!!</h2>
                   <p className="green">You have successfully answered all {number} questions completely. </p>
-                  <button className = "pointer w-30 br2 mt2 ba .outline-0-m bg-orange white pa2 ml1 mv1 bg-animate" onClick = {this.reloadApp}>Restart</button>
+                  <button className = "pointer w-30 br2 mt2 ba b--dark-red bg-orange white pa2 ml1 mv1 bg-animate" onClick = {this.reloadApp}>Restart</button>
               </div>
             )
 
         } else if (fired === true){
           return (
             <div className="tc pa5">
-              <h1 className="w-100-ns f1-ns tc">Unscrambled</h1>
+              <h1 className="w-100-ns f1-ns tc white">Unscrambled</h1>
                 <All 
                   getStatus = {status}
                   capitalize = {this.capitalizeFirstLetter}
@@ -179,7 +179,7 @@ fireMainComponent = () => {
 
         return (
             <div className = "tc pa5">
-              <h1 className="w-100-ns f1-ns tc">Unscrambled</h1>
+              <h1 className="w-100-ns f1-ns tc white">Unscrambled</h1>
               <p className="green ">How many words do you want to Unscramble?</p>
 
               <div className="w-100 flex flex-wrap justify-center">

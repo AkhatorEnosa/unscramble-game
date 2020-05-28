@@ -4,9 +4,9 @@ const Word = (props) =>{
 
     	return (
 			<React.Fragment>
-				<h2 className="ttu" style={props.getStatus === 'Correct' ? {color: 'green',letterSpacing: '2px'} 
+				<h2 className="ttu b--black-20" style={props.getStatus === 'Correct' ? {color: 'green'} 
 							:props.getStatus === 'Incorrect' ? {color: 'red'}
-							: {color: 'black',letterSpacing: '2px'}}>
+							: {color: 'white'}}>
 					{props.children}
 				</h2>
 			</React.Fragment>
