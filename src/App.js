@@ -157,7 +157,7 @@ fireMainComponent = () => {
         } else if (fired === true){
           return (
             <div className="tc pa5">
-              <h1 className="f1">Unscrambled</h1>
+              <h1 className="w-100-ns f1-ns tc">Unscrambled</h1>
                 <All 
                   getStatus = {status}
                   capitalize = {this.capitalizeFirstLetter}
@@ -179,17 +179,21 @@ fireMainComponent = () => {
 
         return (
             <div className = "tc pa5">
-              <h1 className="f1 pa0">Unscrambled</h1>
+              <h1 className="w-100-ns f1-ns tc">Unscrambled</h1>
               <p className="green ">How many words do you want to Unscramble?</p>
-              <select className = "pa2 mt2 br2 b--black-20 ba" onChange = {this.unscrambleCount} autoFocus>
-                <option>---Select Number---</option>
-                <option>5</option>
-                <option>10</option>
-                <option>15</option>
-                <option>20</option>
-                <option>25</option>
-              </select>
-              <button className = "pointer w-10 br2 mt2 ba b--dark-green bg-green white pa2 ml1 mv1 bg-animate hover-bg-dark-green border-box" onClick = {this.fireMainComponent}>Go</button>
+
+              <div className="w-100 flex flex-wrap justify-center">
+                <select className = "w-30-ns pa2 mt2 br2 b--black-20 ba" onChange = {this.unscrambleCount} autoFocus>
+                  <option>---Select Number---</option>
+                  <option>5</option>
+                  <option>10</option>
+                  <option>15</option>
+                  <option>20</option>
+                  <option>25</option>
+                </select>
+
+                <button className = "w-10-ns pointer br2 mt2 ba b--dark-green bg-green white pa2 ml1 bg-animate hover-bg-dark-green border-box" onClick = {this.fireMainComponent}>Go</button>
+              </div>
             </div>
           )
       }
