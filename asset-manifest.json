@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/unscramble-game/static/css/main.7071dbae.chunk.css",
-    "main.js": "/unscramble-game/static/js/main.90e4ecb0.chunk.js",
-    "main.js.map": "/unscramble-game/static/js/main.90e4ecb0.chunk.js.map",
+    "main.css": "/unscramble-game/static/css/main.f6086d64.chunk.css",
+    "main.js": "/unscramble-game/static/js/main.5d2e853c.chunk.js",
+    "main.js.map": "/unscramble-game/static/js/main.5d2e853c.chunk.js.map",
     "runtime-main.js": "/unscramble-game/static/js/runtime-main.7e37bbcd.js",
     "runtime-main.js.map": "/unscramble-game/static/js/runtime-main.7e37bbcd.js.map",
     "static/css/2.3c03f26f.chunk.css": "/unscramble-game/static/css/2.3c03f26f.chunk.css",
     "static/js/2.011f7482.chunk.js": "/unscramble-game/static/js/2.011f7482.chunk.js",
     "static/js/2.011f7482.chunk.js.map": "/unscramble-game/static/js/2.011f7482.chunk.js.map",
     "index.html": "/unscramble-game/index.html",
-    "precache-manifest.7d2197ace6715c4fb6901004fb0958e6.js": "/unscramble-game/precache-manifest.7d2197ace6715c4fb6901004fb0958e6.js",
+    "precache-manifest.cd97b2afdfbad469019394731cbb8916.js": "/unscramble-game/precache-manifest.cd97b2afdfbad469019394731cbb8916.js",
     "service-worker.js": "/unscramble-game/service-worker.js",
     "static/css/2.3c03f26f.chunk.css.map": "/unscramble-game/static/css/2.3c03f26f.chunk.css.map",
-    "static/css/main.7071dbae.chunk.css.map": "/unscramble-game/static/css/main.7071dbae.chunk.css.map",
-    "static/js/2.011f7482.chunk.js.LICENSE.txt": "/unscramble-game/static/js/2.011f7482.chunk.js.LICENSE.txt"
+    "static/css/main.f6086d64.chunk.css.map": "/unscramble-game/static/css/main.f6086d64.chunk.css.map",
+    "static/js/2.011f7482.chunk.js.LICENSE.txt": "/unscramble-game/static/js/2.011f7482.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/unscramble-game/static/media/54677648.eacb041a.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.7e37bbcd.js",
     "static/css/2.3c03f26f.chunk.css",
     "static/js/2.011f7482.chunk.js",
-    "static/css/main.7071dbae.chunk.css",
-    "static/js/main.90e4ecb0.chunk.js"
+    "static/css/main.f6086d64.chunk.css",
+    "static/js/main.5d2e853c.chunk.js"
   ]
 }
