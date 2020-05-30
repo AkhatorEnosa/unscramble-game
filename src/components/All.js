@@ -5,7 +5,7 @@ import Counter from './Counter';
 
 const All = (props) =>{
 		return (
-			<div className="bg-white-60 pt2 pb4 br3 w-100 w-100-m">
+			<div className="w-100 w-100-m bg-white-50 br3 pb3">
 
 				<Word getStatus = {props.status}>
 					{props.status === 'Correct' ? props.word 

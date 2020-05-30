@@ -177,8 +177,8 @@ showWord = (e) => {
             return <div className="tc">Did not get a word</div>
         } else if (fired === true){
           return (
-            <div className="tc pa5">
-              <h1 className="w-100-ns f1-ns tc white">Unscrambled</h1>
+            <div className="tc pa2 pa5-ns pt5">
+              <h1 className="w-100-ns f1-ns tc yellow">UNSCRAMBLE <br/> GAME</h1>
                 <All 
                   getStatus = {status}
                   capitalize = {this.capitalizeFirstLetter}
@@ -202,7 +202,7 @@ showWord = (e) => {
 
         return (
             <div className = "tc pa5">
-              <h1 className="w-100-ns f1-ns tc white">Unscrambled</h1>
+              <h1 className="w-100-ns f1-ns tc yellow">UNSCRAMBLE <br/> GAME</h1>
               <p className="green ">How many words do you want to Unscramble?</p>
 
               <div className="w-100 flex flex-wrap justify-center">
@@ -215,7 +215,7 @@ showWord = (e) => {
                   <option>25</option>
                 </select>
 
-                <button className = "w-10-ns pointer br2 mt2 ba b--dark-green bg-green white pa2 ml1 bg-animate hover-bg-dark-green border-box" onClick = {this.fireMainComponent}>Go</button>
+                <button className = "w-30 w-10-ns pointer br2 mt2 ba b--dark-green bg-green white pa2 ml1 bg-animate hover-bg-dark-green border-box" onClick = {this.fireMainComponent}>Go</button>
               </div>
             </div>
           )
