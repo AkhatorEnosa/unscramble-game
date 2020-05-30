@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import All from './components/All';
 
-
 class App extends Component { 
   constructor() {
     super();
@@ -17,7 +16,8 @@ class App extends Component {
         score: 0,
         fired: false,
         words: [],
-        number: 0
+        number: 0,
+        wordCount: 0
       }
 
   }
@@ -32,10 +32,12 @@ class App extends Component {
       this.setState({
           loading: false,
           word: word[0],
-          randomWord: this.randWord(word[0]) //Randomize the gotten word
+          randomWord: this.randWord(word[0]), //Randomize the gotten word
+          wordCount: this.state.wordCount + 1
       })
 
-      console.log(this.state.word);
+      // console.log(this.state.word);
+      // console.log(this.state.wordCount);
   }
 
 
@@ -56,12 +58,12 @@ class App extends Component {
 
   // checking for errors and others
   checkWord = (e) => {
-    if (this.state.word === this.state.typedWord){
-       if(!this.state.words.includes(this.state.typedWord)) {
+    if (this.state.word === this.state.typedWord.toLowerCase()){
+       if(!this.state.words.includes(this.state.typedWord.toLowerCase())) {
            this.setState({ 
             status : 'Correct', typedWord: '',
             score: this.state.score + 1, 
-            words: [...this.state.words, this.state.typedWord]
+            words: [...this.state.words, this.state.typedWord.toLowerCase()]
           });
        }else {
         this.setState({ status : 'Please wait for new word to finish loading first', typedWord: ''});
@@ -77,10 +79,10 @@ class App extends Component {
   }
 
   // shuffling a string
-  shuffleWord = (e) => {
-    this.setState({
-      randomWord: this.randWord(this.state.word)
-    });
+  shuffleWord = () => {
+      this.setState({
+        randomWord: this.randWord(this.randWord(this.state.word))
+      });
   }
 
 
@@ -89,7 +91,7 @@ class App extends Component {
     this.componentDidMount();
       this.setState({
         typedWord: '',
-        status: ' ',
+        status: '',
         randomWord: ' '
       });
   }
@@ -135,25 +137,44 @@ fireMainComponent = () => {
     }
 }
 
+showWord = (e) => {
+
+   if(!this.state.words.includes(this.state.word)) {
+       this.setState({ 
+        status : '1', typedWord: this.state.word,
+        score: this.state.score, 
+        randomWord : this.state.word,
+        words: [...this.state.words, this.state.typedWord]
+      });
+    }
+}
 
    render () {
 
-      const { status,score,typedWord,word,randomWord,loading,number,fired } = this.state;
+      const { status,score,typedWord,word,randomWord,loading,number,fired, wordCount } = this.state;
 
 
-        if (loading){ 
+        if (wordCount > 1 && wordCount > number){
+          return (
+            <div className="tc pa6">
+                <h2 className="f1 red">Oops!!! Maybe lucky next time!!!</h2>
+                <p className="red">You tried your best but could not unscramble all the words correctly. Your total score is <span className="b"> {score}</span>.</p>
+                <button className = "pointer w-30 br2 mt2 ba b--dark-blue bg-blue white pa2 ml1 mv1 bg-animate hover-bg-dark-blue" onClick = {this.reloadApp}>Try Again</button>
+            </div>
+          )
+
+        } else if ((score > 0) && (score == number)){ 
+            return (
+            <div className="tc pa6">
+                <h2 className="f1 green">Congratulations!!!!</h2>
+                <p className="green">You have successfully answered all {this.state.number} questions completely. </p>
+                <button className = "pointer w-30 br2 mt2 ba b--dark-red bg-orange white pa2 ml1 mv1 bg-animate hover-bg-red" onClick = {this.reloadApp}>Restart</button>
+            </div>
+          )
+        } else if (loading){ 
             return <div className="tc mt7 white">Loading...</div>
         } else if(!word.length){
             return <div className="tc">Did not get a word</div>
-        } else if ((score > 0) && (score == number)){
-            return (
-              <div className="tc pa6">
-                  <h2 className="f1 green">Congratulations!!!!</h2>
-                  <p className="green">You have successfully answered all {number} questions completely. </p>
-                  <button className = "pointer w-30 br2 mt2 ba b--dark-red bg-orange white pa2 ml1 mv1 bg-animate" onClick = {this.reloadApp}>Restart</button>
-              </div>
-            )
-
         } else if (fired === true){
           return (
             <div className="tc pa5">
@@ -168,10 +189,12 @@ fireMainComponent = () => {
                   track = {this.trackWord}
                   shuffle = {this.shuffleWord}
                   next = {this.nextWord}
+                  show = {this.showWord}
                   status = {status}
                   typedWord = {typedWord}
                   countScore = {score}
                   total = {number}
+                  wordC = {wordCount}
                 />
             </div>
           )
@@ -183,7 +206,7 @@ fireMainComponent = () => {
               <p className="green ">How many words do you want to Unscramble?</p>
 
               <div className="w-100 flex flex-wrap justify-center">
-                <select className = "w-30-ns pa2 mt2 br2 b--black-20 ba" onChange = {this.unscrambleCount} autoFocus>
+                <select className = "w-30-ns pa2 mt2 br2 ba" onChange = {this.unscrambleCount} autoFocus>
                   <option>---Select Number---</option>
                   <option>5</option>
                   <option>10</option>

@@ -3,7 +3,9 @@ import React from 'react';
 const Counter = (props) => {
 	return (
 			<div className="b">
-				Score: {props.getScore} / {props.getTotal}
+				<p>Gotten Words > {props.getScore}</p>
+				<p>Attempting Word Number > {props.getWordCount}</p>
+				<p>Total Words > {props.getTotal} </p> 
 			</div>
 		)
 }

@@ -12,16 +12,22 @@ const All = (props) =>{
 						: props.randomWord}
 				</Word>
 
-                <Counter getScore = {props.countScore} getTotal = {props.total}/>
+                <Counter 
+                	getScore = {props.countScore} 
+                	getTotal = {props.total} 
+                	getWordCount = {props.wordC}
+                />
 
 				<Form  					  
 					  checkEvent = {props.check}
 	                  changeEvent = {props.track}
 	                  shuffleEvent = {props.shuffle}
 	                  nextEvent = {props.next}
+	                  showEvent = {props.show}
 	                  // reloadApi = {props.componentDidMount}
 	                  getStatus = {props.status}
-	                  getValue = {props.typedWord}/>
+	                  getValue = {props.typedWord}
+	             />
 			</div>
 		)
 	
