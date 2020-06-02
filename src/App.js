@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import All from './components/All';
+import Footer from './components/Footer';
 
 class App extends Component { 
   constructor() {
@@ -161,6 +162,8 @@ showWord = (e) => {
                 <p className="red f7 f6-ns">You tried your best but could not unscramble all the words correctly. <br/>
                 Your total score is <span className="b"> {score}</span>.</p>
                 <button className = "pointer w-40 w-30-ns br2 mt2 ba b--dark-blue bg-blue white pa2 ml1 mv1 bg-animate hover-bg-dark-blue" onClick = {this.reloadApp}>Try Again</button>
+
+              <Footer />
             </div>
           )
 
@@ -170,6 +173,8 @@ showWord = (e) => {
                 <h2 className="f4 f2-ns green">Congratulations!!!!</h2>
                 <p className="green f7 f4-ns">You have successfully answered all {this.state.number} questions completely. </p>
                 <button className = "pointer w-40 w-30-ns br2 mt2 ba b--dark-red bg-orange white pa2 ml1 mv1 bg-animate hover-bg-red" onClick = {this.reloadApp}>Restart</button>
+
+              <Footer />
             </div>
           )
         } else if (loading){ 
@@ -197,6 +202,8 @@ showWord = (e) => {
                   total = {number}
                   wordC = {wordCount}
                 />
+
+                <Footer />
             </div>
           )
         }else{ 
@@ -218,6 +225,8 @@ showWord = (e) => {
 
                 <button className = "w-30 w-10-m w-10-ns f7 f6-ns pointer br2 mt2 ba b--dark-green bg-green white pa2 ml1 bg-animate hover-bg-dark-green border-box" onClick = {this.fireMainComponent}>Go</button>
               </div>
+
+              <Footer />
             </div>
           )
       }
