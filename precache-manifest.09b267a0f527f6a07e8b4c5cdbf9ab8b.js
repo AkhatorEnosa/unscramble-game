@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ecedfcd23eed4d42c33635b4f2e869e1",
+    "revision": "ecb3f1f8558b5c928456cf49cc1d7b2e",
     "url": "/unscramble-game/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/unscramble-game/static/css/2.3c03f26f.chunk.css"
   },
   {
-    "revision": "a6a8c3d08d874e8aca65",
+    "revision": "09f088fa103c7a54e472",
     "url": "/unscramble-game/static/css/main.f6086d64.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/unscramble-game/static/js/2.9ffbfb03.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a6a8c3d08d874e8aca65",
-    "url": "/unscramble-game/static/js/main.5a51e832.chunk.js"
+    "revision": "09f088fa103c7a54e472",
+    "url": "/unscramble-game/static/js/main.b7a6fccd.chunk.js"
   },
   {
     "revision": "61d0e647fd717240b4b8",
