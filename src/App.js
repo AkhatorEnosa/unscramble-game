@@ -58,12 +58,12 @@ class App extends Component {
 
   // checking for errors and others
   checkWord = (e) => {
-    if (this.state.word === this.state.typedWord.toLowerCase()){
-       if(!this.state.words.includes(this.state.typedWord.toLowerCase())) {
+    if (this.state.word === this.state.typedWord.toLowerCase().trim()){
+       if(!this.state.words.includes(this.state.typedWord.toLowerCase().trim())) {
            this.setState({ 
             status : 'Correct', typedWord: '',
             score: this.state.score + 1, 
-            words: [...this.state.words, this.state.typedWord.toLowerCase()]
+            words: [...this.state.words, this.state.typedWord.toLowerCase().trim()]
           });
        }else {
         this.setState({ status : 'Please wait for new word to finish loading first', typedWord: ''});
@@ -156,19 +156,20 @@ showWord = (e) => {
 
         if (wordCount > 1 && wordCount > number){
           return (
-            <div className="tc pa6">
-                <h2 className="f1 red">Oops!!! Maybe lucky next time!!!</h2>
-                <p className="red">You tried your best but could not unscramble all the words correctly. Your total score is <span className="b"> {score}</span>.</p>
-                <button className = "pointer w-30 br2 mt2 ba b--dark-blue bg-blue white pa2 ml1 mv1 bg-animate hover-bg-dark-blue" onClick = {this.reloadApp}>Try Again</button>
+            <div className="tc pa1 mt6">
+                <h2 className="f4 f2-ns red">Oops!!! Maybe lucky next time!!!</h2>
+                <p className="red f7 f6-ns">You tried your best but could not unscramble all the words correctly. <br/>
+                Your total score is <span className="b"> {score}</span>.</p>
+                <button className = "pointer w-40 w-30-ns br2 mt2 ba b--dark-blue bg-blue white pa2 ml1 mv1 bg-animate hover-bg-dark-blue" onClick = {this.reloadApp}>Try Again</button>
             </div>
           )
 
         } else if ((score > 0) && (score == number)){ 
             return (
-            <div className="tc pa6">
-                <h2 className="f1 green">Congratulations!!!!</h2>
-                <p className="green">You have successfully answered all {this.state.number} questions completely. </p>
-                <button className = "pointer w-30 br2 mt2 ba b--dark-red bg-orange white pa2 ml1 mv1 bg-animate hover-bg-red" onClick = {this.reloadApp}>Restart</button>
+            <div className="tc pa1 mt6">
+                <h2 className="f4 f2-ns green">Congratulations!!!!</h2>
+                <p className="green f7 f4-ns">You have successfully answered all {this.state.number} questions completely. </p>
+                <button className = "pointer w-40 w-30-ns br2 mt2 ba b--dark-red bg-orange white pa2 ml1 mv1 bg-animate hover-bg-red" onClick = {this.reloadApp}>Restart</button>
             </div>
           )
         } else if (loading){ 
@@ -177,7 +178,7 @@ showWord = (e) => {
             return <div className="tc">Did not get a word</div>
         } else if (fired === true){
           return (
-            <div className="tc pa2 pa5-ns pt5">
+            <div className="tc pa2 pa5-ns pt5 pb2">
               <h1 className="w-100-ns f1-ns tc yellow">UNSCRAMBLE <br/> GAME</h1>
                 <All 
                   getStatus = {status}
@@ -206,7 +207,7 @@ showWord = (e) => {
               <p className="green ">How many words do you want to Unscramble?</p>
 
               <div className="w-100 flex flex-wrap justify-center">
-                <select className = "w-30-ns pa2 mt2 br2 ba" onChange = {this.unscrambleCount} autoFocus>
+                <select className = "w-70 w-30-ns pa2 pa3-ns mt2 br2 input-reset ba bg-white-60 f7 f6-ns" onChange = {this.unscrambleCount}>
                   <option>---Select Number---</option>
                   <option>5</option>
                   <option>10</option>
@@ -215,7 +216,7 @@ showWord = (e) => {
                   <option>25</option>
                 </select>
 
-                <button className = "w-30 w-10-ns pointer br2 mt2 ba b--dark-green bg-green white pa2 ml1 bg-animate hover-bg-dark-green border-box" onClick = {this.fireMainComponent}>Go</button>
+                <button className = "w-30 w-10-m w-10-ns f7 f6-ns pointer br2 mt2 ba b--dark-green bg-green white pa2 ml1 bg-animate hover-bg-dark-green border-box" onClick = {this.fireMainComponent}>Go</button>
               </div>
             </div>
           )
