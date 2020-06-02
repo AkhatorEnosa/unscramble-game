@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ecb3f1f8558b5c928456cf49cc1d7b2e",
+    "revision": "ef29031f82028e90388c725f4818f13f",
     "url": "/unscramble-game/index.html"
   },
   {

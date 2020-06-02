@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/unscramble-game/precache-manifest.09b267a0f527f6a07e8b4c5cdbf9ab8b.js"
+  "/unscramble-game/precache-manifest.c6cd6cf6c0fdc491c7b7f8f6913e5b11.js"
 );
 
 self.addEventListener('message', (event) => {
