@@ -26,7 +26,7 @@ class App extends Component {
 
   // check if component has mounted then call api and setState
   async componentDidMount(){
-      const url = "https://random-word-api.herokuapp.com/word?number=1";
+      const url = "https://random-word-api.herokuapp.com/word?length=5";
       const response = await fetch(url);
       const word = await response.json();
 
@@ -156,6 +156,58 @@ showWord = (e) => {
 
 
         if (wordCount > 1 && wordCount > number){
+          if ((score > 0) && (score === number)){ 
+            return (
+              <div className="tc pa1 mt6">
+                  <h2 className="f4 f2-ns green">Congratulations!!!!</h2>
+                  <p className="green f7 f4-ns">You have successfully answered all {this.state.score} questions completely. </p>
+                  <button className = "pointer w-40 w-30-ns br2 mt2 ba b--dark-red bg-orange white pa2 ml1 mv1 bg-animate hover-bg-red" onClick = {this.reloadApp}>Restart</button>
+
+                <Footer />
+              </div>
+            )
+          } else if (score < (number/2)){
+            return (
+              <div className="tc pa1 mt6">
+                  <h2 className="f4 f2-ns red">Poor!!!!</h2>
+                  <p className="red f7 f4-ns">You were only able to answer {this.state.score} questions correctly. </p>
+                  <button className = "pointer w-40 w-30-ns br2 mt2 ba b--dark-red bg-orange white pa2 ml1 mv1 bg-animate hover-bg-red" onClick = {this.reloadApp}>Try Again</button>
+
+                <Footer />
+              </div>
+            )
+          } else if (score > (number/2)){
+            return (
+              <div className="tc pa1 mt6">
+                  <h2 className="f4 f2-ns blue">Nice!!!!</h2>
+                  <p className="blue f7 f4-ns">You were only able to answer {this.state.score} questions correctly. </p>
+                  <button className = "pointer w-40 w-30-ns br2 mt2 ba b--dark-red bg-orange white pa2 ml1 mv1 bg-animate hover-bg-red" onClick = {this.reloadApp}>Try Again</button>
+
+                <Footer />
+              </div>
+            )
+          } else if (score === ((number/2)+1)){
+            return (
+              <div className="tc pa1 mt6">
+                  <h2 className="f4 f2-ns yellow">Average!!!!</h2>
+                  <p className="yellow f7 f4-ns">You were only able to answer {this.state.score} questions correctly. </p>
+                  <button className = "pointer w-40 w-30-ns br2 mt2 ba b--dark-red bg-orange white pa2 ml1 mv1 bg-animate hover-bg-red" onClick = {this.reloadApp}>Try Again</button>
+
+                <Footer />
+              </div>
+            ) 
+          } else if (score > 0 && score === number){
+            return (
+              <div className="tc pa1 mt6">
+                  <h2 className="f4 f2-ns green">Excellent!!!!</h2>
+                  <p className="green f7 f4-ns">You were only able to answer {this.state.score} questions correctly!!! That is Brilliant!!!!! </p>
+                  <button className = "pointer w-40 w-30-ns br2 mt2 ba b--dark-red bg-orange white pa2 ml1 mv1 bg-animate hover-bg-red" onClick = {this.reloadApp}>Restart</button>
+
+                <Footer />
+              </div>
+            )
+          }
+
           return (
             <div className="tc pa1 mt6">
                 <h2 className="f4 f2-ns red">Oops!!! Maybe lucky next time!!!</h2>
@@ -167,16 +219,6 @@ showWord = (e) => {
             </div>
           )
 
-        } else if ((score > 0) && (score == number)){ 
-            return (
-            <div className="tc pa1 mt6">
-                <h2 className="f4 f2-ns green">Congratulations!!!!</h2>
-                <p className="green f7 f4-ns">You have successfully answered all {this.state.number} questions completely. </p>
-                <button className = "pointer w-40 w-30-ns br2 mt2 ba b--dark-red bg-orange white pa2 ml1 mv1 bg-animate hover-bg-red" onClick = {this.reloadApp}>Restart</button>
-
-              <Footer />
-            </div>
-          )
         } else if (loading){ 
             return <div className="tc mt7 white">Loading...</div>
         } else if(!word.length){
