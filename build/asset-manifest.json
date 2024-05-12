@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/unscramble-game/static/css/main.045c5012.css",
+    "main.js": "/unscramble-game/static/js/main.77fce19a.js",
+    "static/media/54677648.jpg": "/unscramble-game/static/media/54677648.546a99b39a0471c12925.jpg",
+    "index.html": "/unscramble-game/index.html",
+    "main.045c5012.css.map": "/unscramble-game/static/css/main.045c5012.css.map",
+    "main.77fce19a.js.map": "/unscramble-game/static/js/main.77fce19a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.045c5012.css",
+    "static/js/main.77fce19a.js"
+  ]
+}
