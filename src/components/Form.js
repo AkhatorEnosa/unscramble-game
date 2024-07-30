@@ -11,7 +11,7 @@ const Form = (props) => {
 					<button  onClick={props.showEvent} className = {props.getStatus === 'Correct' || props.getStatus === '1' ? 'w-20 w-20-m w-10-ns f7 f6-ns br2 mt2 ba b--gray bg-light-gray black pa2 ml1 mv1 border-box' : 'pointer w-20 w-20-m w-10-ns f7 f6-ns br2 mt2 ba b--gray bg-light-gray black pa2 ml1 mv1 bg-animate hover-bg-dark-gray hover-white border-box'} disabled = {props.getStatus === 'Correct' ? true : false}>Show Word</button>
 				</div>
 				<div className="w-100 flex justify-center">
-					<span className={props.getStatus === 'Correct' ? 'w-80 border-box br1 f7 f6-ns pa3 mt2 green bg-washed-green' : 
+					<span className={props.getStatus === 'Correct' ? 'w-40 border-box br1 f7 f6-ns pa3 mt5 green bg-washed-green' : 
 																	'w-80 border-box br1 f7 f6-ns pa3 mt2 red bg-washed-red'} role="alert" style={props.getStatus === '' || props.getStatus === '1' ? {display: 'none'} : {display: 'block'}}>{props.getStatus}</span>
 				</div>
 
