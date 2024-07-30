@@ -26,7 +26,7 @@ class App extends Component {
 
   // check if component has mounted then call api and setState
   async componentDidMount(){
-      const url = "https://random-word-api.herokuapp.com/word?length=5";
+      const url = "https://random-word-api.vercel.app/api?words=1";
       const response = await fetch(url);
       const word = await response.json();
 
