@@ -219,8 +219,6 @@ showWord = (e) => {
             </div>
           )
 
-        } else if (loading){ 
-            return <div className="tc mt7 white">Loading...</div>
         } else if(!word.length){
             return <div className="tc">Did not get a word</div>
         } else if (fired === true){
