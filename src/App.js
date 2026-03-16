@@ -26,7 +26,7 @@ class App extends Component {
 
   // check if component has mounted then call api and setState
   async componentDidMount(){
-      const url = "https://random-word-api.herokuapp.com/word";
+      const url = "https://random-word-api.herokuapp.com/word?number=1&diff=1";
       const response = await fetch(url);
       const word = await response.json();
 
