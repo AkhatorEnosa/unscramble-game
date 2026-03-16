@@ -26,7 +26,7 @@ class App extends Component {
 
   // check if component has mounted then call api and setState
   async componentDidMount(){
-      const url = "https://random-word-api.vercel.app/api?words=1";
+      const url = "https://random-word-api.herokuapp.com/word";
       const response = await fetch(url);
       const word = await response.json();
 
@@ -36,18 +36,7 @@ class App extends Component {
           randomWord: this.randWord(word[0]), //Randomize the gotten word
           wordCount: this.state.wordCount + 1
       })
-
-      // console.log(this.state.word);
-      // console.log(this.state.wordCount);
   }
-
-
-  // Capitalize the first letter of a string
-  // capitalizeFirstLetter = (word) => {
-  //   const newLetter = word[0].toUpperCase() + word.slice(1)
-
-  //   return newLetter;
-  // }
 
   // get the value of input field
   trackWord = (e) => {
@@ -86,7 +75,6 @@ class App extends Component {
       });
   }
 
-
   // Re-call componentDidMount and set states again
   reloadComponents = () => {
     this.componentDidMount();
@@ -97,12 +85,10 @@ class App extends Component {
       });
   }
 
-
   // getting next word
   nextWord = () => {
     this.reloadComponents();
   }
-
 
 // Randomize word
   randWord = (str) => {
@@ -110,33 +96,30 @@ class App extends Component {
     return newWord;
   }
 
-
 // Reload App
   reloadApp = () => {
     window.location.reload(false);
   }
 
+  // How many words to Unscramble
+  unscrambleCount = (e) => {
+    this.setState({
+      number : e.target.value
+    });
+  }
 
-// How many words to Unscramble
-unscrambleCount = (e) => {
-  this.setState({
-    number : e.target.value
-  });
-}
-
-
-// Go to main components app
-fireMainComponent = () => {
-  if(this.state.number === '') {
-     alert('Field cannot be empty')
-    }else if ((this.state.number === '---Select Number---') || (this.state.number === 0)) {
-      alert('Choose a valid number')
-    } else{
-      this.setState({
-        fired: true
-      })
-    }
-}
+  // Go to main components app
+  fireMainComponent = () => {
+    if(this.state.number === '') {
+      alert('Field cannot be empty')
+      }else if ((this.state.number === '---Select Number---') || (this.state.number === 0)) {
+        alert('Choose a valid number')
+      } else{
+        this.setState({
+          fired: true
+        })
+      }
+  }
 
 showWord = (e) => {
 
